@@ -1,0 +1,153 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root{
+  --active-color:#CFA670;
+  --bg-brand-primary:rgb(128,128,0);
+  --bg-brand-secondary:rgb(255,214,153);
+}
+
+body {
+  @apply font-lato relative;
+}
+
+.navbar{
+  @apply sticky top-0 left-0 right-0 shadow-md z-50;
+}
+.top_nav{
+  @apply grid grid-cols-3 items-center justify-center py-1 px-10 bg-brand-secondary text-black text-lg;
+}
+.top_nav .announcement{
+  @apply col-span-2;
+}
+.top_nav .nav_social{
+  @apply col-span-1 flex justify-end items-center gap-5 text-xl;
+}
+
+/** Main Nav ^*/
+.bottom_nav{
+  @apply grid grid-cols-5 items-center justify-start py-1 px-10 bg-brand-color dark:bg-gray-900 top-0 left-0 right-0 transition-all duration-300;
+}
+.bottom_nav .logo{
+  @apply col-span-2 w-full h-[60px];
+}
+.bottom_nav .logo img{
+  @apply w-[120px] h-full;
+}
+.bottom_nav .main_nav{
+  @apply col-span-3;
+}
+
+.bottom_nav .main_nav .logo{
+  @apply w-full h-[50px];
+}
+.bottom_nav .main_nav, .bottom_nav .main_nav .nav_right, .bottom_nav .main_nav .main_nav_list{
+  @apply flex items-center justify-end gap-5 p-3 text-white;
+}
+.bottom_nav .main_nav .nav_right .cart_sect{
+  @apply flex items-center justify-center text-[28px] relative;
+}
+.cart_sect .cart_count{
+  @apply flex items-center justify-center absolute top-[-12px] left-[-12px] bg-red-400 text-sm min-w-[25px] min-h-[25px] p-[1px] rounded-full text-white;
+}
+ span.dark_light{
+  @apply w-[40px] h-[40px] flex items-center justify-center text-black rounded-full bg-gray-200 dark:bg-gray-600 cursor-pointer text-2xl;
+}
+
+.bottom_nav .main_nav .main_nav_list li a{
+  @apply py-2 w-full h-full transition-all duration-300 font-semibold hover:text-active hover:dark:text-active relative after:absolute after:bottom-0 after:bg-[#CFA670] after:block after:w-full after:h-[2px] after:transform after:transition-transform after:ease-in after:scale-x-0 after:origin-left hover:after:scale-x-100;
+}
+
+/* Banner */
+.banner{
+  @apply bg-[url('./assets/images/banner_table.jpg')] bg-cover bg-no-repeat bg-center h-[75vh] w-full relative;
+}
+.banner .banner_span{
+  @apply absolute top-0 left-0 w-full h-full p-8 grid grid-cols-5 items-center gap-20;
+}
+.banner .banner_span .banner_span_left{
+  @apply col-span-2 px-4 py-8 text-5xl text-center bg-[rgba(255,255,255,0.35)] rounded-md border border-white;
+}
+.banner .banner_span .banner_span_left .welcome{
+  @apply font-lato italic block py-2 text-[#fec880] font-900;
+}
+.banner .banner_span .banner_span_left h2{
+  @apply text-8xl text-gray-800 font-900;
+}
+.banner .banner_span .banner_span_right{
+  @apply col-span-3 block w-full h-full;
+}
+.banner .banner_span .banner_span_right img{
+  @apply w-60 h-60;
+}
+.banner .banner_span .banner_span_right .image1{
+  @apply w-full grid items-center justify-center;
+}
+.banner .banner_span .banner_span_right .image2{
+  @apply w-full grid items-center justify-end;
+}
+
+/* About Us */
+.about_us_section{
+  @apply py-12;
+}
+.about_us_section .about_us_top{
+  @apply p-5 text-center;
+}
+.about_us_section .about_us_top h2{
+  @apply text-3xl text-gray-600 font-700;
+}
+.footer .footer_top {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start justify-center gap-[30px] bg-brand-color py-5 px-6 sm:px-10 lg:px-20 text-white;
+}
+
+.footer .footer_top .footer_top_address .logo {
+  @apply max-w-[220px] w-full h-[80px];
+}
+
+.footer .footer_top .footer_top_address .logo img {
+  @apply w-full h-full object-contain; /* Ensure the logo maintains its aspect ratio */
+}
+
+.footer .footer_top .footer_top_address {
+  @apply col-span-1 sm:col-span-2 mt-4 text-center sm:text-left; /* Adjusting column span for smaller screens */
+}
+
+.footer .footer_top .footer_common {
+  @apply col-span-1 text-center sm:text-left; /* Center text on small screens */
+}
+
+.footer .footer_top .footer_common h2 {
+  @apply text-xl sm:text-2xl mb-4; /* Adjusting text size for small screens */
+}
+
+.footer .footer_top .footer_common ul li a {
+  @apply font-400;
+}
+
+.footer .footer_top .footer_common ul.social {
+  @apply flex items-center justify-center sm:justify-start gap-[10px] md:gap-[20px]; /* Center on small screens, left-align on larger */
+}
+
+.footer .footer_top .footer_common ul.social li a {
+  @apply text-xl p-[8px] md:p-[10px] bg-slate-400 w-[50px] md:w-[70px] rounded-[10px] h-[30px] md:h-[35px] flex items-center justify-center; /* Adjusting icon sizes */
+}
+
+.footer_mid_image {
+  @apply flex items-center justify-center bg-brand-color py-[10px] md:py-[20px]; /* Adjust padding for mid image */
+}
+
+.footer_bottom {
+  @apply bg-brand-secondary text-black py-2 md:py-3 text-center; /* Responsive bottom padding */
+}
+
+/* Utility */
+.container{
+  @apply w-5/6 m-auto;
+}
